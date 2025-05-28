@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aa-automods.ca/sitemap.xml
