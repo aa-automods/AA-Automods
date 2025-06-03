@@ -273,6 +273,23 @@ document.addEventListener("DOMContentLoaded", () => {
         element.style.transition = "opacity 0.6s, transform 0.6s";
         observer.observe(element);
     });
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+    const lazyImageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src || lazyImage.src;
+                lazyImageObserver.unobserve(lazyImage);
+            }
+        });
+    }, { rootMargin: "200px 0px" }); // Start loading 200px before entering viewport
+
+    lazyImages.forEach((lazyImage) => {
+        if (lazyImage.dataset.src) {
+            lazyImageObserver.observe(lazyImage);
+        }
+    });
 
 });
 
@@ -383,6 +400,24 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.remove("show");
         document.body.style.overflow = ""; // Restore scrolling
     }
+});
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const consultationModal = document.getElementById('consultation-modal');
+    const closeModalButton = consultationModal.querySelector('.close-modal');
+
+    // Close modal when "X" is clicked
+    closeModalButton.addEventListener('click', () => {
+        const modal = document.getElementById("consultation-modal");
+        modal.classList.remove("show");
+        document.body.style.overflow = ""; // Restore scrolling
+    });
+
+    // Open modal function
+    window.openConsultationModal = () => {
+        openModal();
+    };
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -518,6 +553,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Gallery Slideshow Functionality
+// Gallery Slideshow Functionality
+// Gallery Slideshow Functionality
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slide");
 const thumbnails = document.querySelectorAll(".thumbnail");
@@ -526,62 +563,68 @@ let isAnimating = false;
 // Initialize the gallery
 showSlide(slideIndex);
 
-function changeSlide(n) {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    // Calculate new index with wrap-around
-    const newIndex = (slideIndex + n + slides.length) % slides.length;
-
-    // Add outgoing animation to current slide
-    slides[slideIndex].classList.add("slide-out");
-
-    // After animation completes, switch slides
-    setTimeout(() => {
-        slides[slideIndex].classList.remove("active-slide", "slide-out");
-        slideIndex = newIndex;
-        showSlide(slideIndex);
-        isAnimating = false;
-    }, 500); // Match this duration with your CSS animation
-}
-
-function showSlide(n) {
-    // Reset all slides and thumbnails
-    slides.forEach((slide) => {
-        slide.classList.remove("active-slide", "slide-out");
-    });
-
-    thumbnails.forEach((thumb) => {
-        thumb.classList.remove("active");
-    });
-
-    // Activate new slide and thumbnail
-    slides[n].classList.add("active-slide");
-    thumbnails[n].classList.add("active");
-}
-
-// Event listeners for navigation
-document.querySelector(".next").addEventListener("click", () => changeSlide(1));
-document
-    .querySelector(".prev")
-    .addEventListener("click", () => changeSlide(-1));
-
-// Event listeners for thumbnails
+// Add event listeners to thumbnails once
 thumbnails.forEach((thumb, index) => {
     thumb.addEventListener("click", () => {
         if (index !== slideIndex && !isAnimating) {
             isAnimating = true;
+
+            // Pause current video
+            const currentVideos = slides[slideIndex].querySelectorAll('video');
+            currentVideos.forEach(video => video.pause());
+
             slides[slideIndex].classList.add("slide-out");
 
             setTimeout(() => {
                 slides[slideIndex].classList.remove("active-slide", "slide-out");
-                slideIndex = index;
-                showSlide(slideIndex);
+                showSlide(index);
                 isAnimating = false;
             }, 500);
         }
     });
 });
+
+function changeSlide(n) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    // Pause current video
+    const currentVideos = slides[slideIndex].querySelectorAll('video');
+    currentVideos.forEach(video => video.pause());
+
+    const newIndex = (slideIndex + n + slides.length) % slides.length;
+    slides[slideIndex].classList.add("slide-out");
+
+    setTimeout(() => {
+        slides[slideIndex].classList.remove("active-slide", "slide-out");
+        showSlide(newIndex);
+        isAnimating = false;
+    }, 500);
+}
+
+function showSlide(n) {
+    // Update all slides and thumbnails
+    slides.forEach((slide, index) => {
+        slide.classList.remove("active-slide", "slide-out");
+        const videos = slide.querySelectorAll('video');
+        videos.forEach(video => {
+            if (index === n) {
+                video.play().catch(e => console.log("Video autoplay prevented:", e));
+            } else {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+    });
+
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle("active", index === n);
+    });
+
+    // Activate new slide
+    slides[n].classList.add("active-slide");
+    slideIndex = n;
+}
 
 document.querySelectorAll(".services .service-card").forEach((card) => {
     const images = card.querySelector(".service-images");
@@ -646,15 +689,17 @@ document.addEventListener("DOMContentLoaded", () => {
         smooth: true,
         multiplier: 0.6,
         smartphone: {
-            smooth: false,
+            smooth: true, // Changed to true for smoother mobile experience
         },
         tablet: {
-            smooth: false,
+            smooth: true, // Changed to true for smoother tablet experience
         },
-        // Add these options:
         getDirection: true,
         getSpeed: true,
-        inertia: 0.5
+        inertia: 0.7, // Increased for smoother deceleration
+        lerp: 0.1, // Added for smoother animations
+        touchMultiplier: 1.5, // Added for better touch response
+        firefoxMultiplier: 50, // Added for better Firefox performance
     });
 
     // Handle anchor links
@@ -688,6 +733,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     ScrollUpdateDelay();
+
+    // Add this near your scroll-related code
+    function debounce(func, wait = 20, immediate = true) {
+        let timeout;
+        return function() {
+            const context = this,
+                args = arguments;
+            const later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+
+    window.addEventListener('scroll', debounce(() => {
+        // Your scroll-related code here
+    }));
 });
 
 if (document.getElementById('paypal-button-container')) {
@@ -722,4 +788,11 @@ if (document.getElementById('paypal-button-container')) {
             alert('An error occurred with PayPal Checkout.');
         }
     }).render('#paypal-button-container');
+}
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => console.log('SW registered'))
+            .catch(err => console.log('SW registration failed'));
+    });
 }

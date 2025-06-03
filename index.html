@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="A&A Auto Mods specializes in premium car customizations including star headliners, ambient lighting, underglow, and emergency lighting in Vaughan, Ontario. Transform your vehicle today.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
@@ -23,9 +23,6 @@
     <script src="https://www.paypal.com/sdk/js?client-id=AZpvOQoNaV-fjykAJ16Vh&currency=CAD"></script>
     <link rel="canonical" href="https://www.apexautocustoms.com" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <script type="application/ld+json">
         {
@@ -388,18 +385,21 @@
         }
     </script>
     <meta name="slick-site-verification" content="searchconsole-lboiz95q6h" />
-    <link rel="icon" href="photos/favicon.ico" type="image/x-icon">
     <script src="https://www.paypal.com/sdk/js?client-id=BAAavcJ8pVMRW2s3XxOvocCtFS_M3luP7H890qWcBUEJLRZHAVsWkphrYRNZAg4zrmVGHORphnRVaocmEw&components=hosted-buttons&disable-funding=venmo&currency=CAD">
     </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon_16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon_32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="favicon_180x180.png" />
+    <link rel="shortcut icon" href="favicon_180x180.png" />
     <title>A&A Auto Mods | Premium Car Customization & Star Headliners in Vaughan</title>
 </head>
 
 <body>
     <header id="header">
         <div class="header-container">
+            <div class="logo">
+                <img src="photos/logo.webp" alt="A&A Auto Mods Logo" class="logo-image" />
+            </div>
             <div class="logo">A&A<span>AUTO</span> Mods</div>
             <button class="nav-toggle" id="nav-toggle">☰</button>
             <nav id="main-nav">
@@ -433,11 +433,11 @@
                 <div class="sale-service">
                     <h3>Star Headliner</h3>
                     <div class="sale-details">
-                        <span class="discount-badge">20% OFF</span>
+                        <span class="discount-badge">Up to 20% OFF</span>
                         <p>All star headliner packages</p>
                         <ul>
-                            <li>Basic Package: $475+</li>
-                            <li>Advanced Package: $645+</li>
+                            <li>Basic Package: $540+</li>
+                            <li>Advanced Package: $640+</li>
                             <li>Premium Package: $1000+</li>
                         </ul>
                     </div>
@@ -447,12 +447,12 @@
                 <div class="sale-service">
                     <h3>Ambient Lighting</h3>
                     <div class="sale-details">
-                        <span class="discount-badge">20% OFF</span>
+                        <span class="discount-badge">Up to 20% OFF</span>
                         <p>All ambient lighting packages</p>
                         <ul>
-                            <li>Basic Package: $280+</li>
-                            <li>Advanced Package: $500+</li>
-                            <li>Premium Package: $700+</li>
+                            <li>Basic Package: $400+</li>
+                            <li>Advanced Package: $550+</li>
+                            <li>Premium Package: $920+</li>
                         </ul>
                     </div>
                     <button class="learn-more-btn" onclick="openPricingModal('ambient-lighting')">Learn More</button>
@@ -461,15 +461,15 @@
                 <div class="sale-service">
                     <h3>Underglow</h3>
                     <div class="sale-details">
-                        <span class="discount-badge">20% OFF</span>
+                        <span class="discount-badge">Up to 20% OFF</span>
                         <p>All underglow packages</p>
                         <ul>
                             <li>Car Basic: $160+</li>
-                            <li>Car Advanced: $240+</li>
+                            <li>Car Advanced: $250+</li>
                             <li>Car Premium: $400+</li>
-                            <li>Truck Basic: $190+</li>
+                            <li>Truck Basic: $200+</li>
                             <li>Truck Advanced: $300+</li>
-                            <li>Truck Premium: $650+</li>
+                            <li>Truck Premium: $700+</li>
                         </ul>
                     </div>
                     <button class="learn-more-btn" onclick="openPricingModal('underglow')">Learn More</button>
@@ -574,7 +574,7 @@
                                     <source src="videos/underglow.webm" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <img loading="lazy" src="photos/underglow.webp" alt="Underglow Project" />
+                                <img loading="lazy" src="photos/underglow-4.webp" alt="Underglow Project" />
                                 <img loading="lazy" src="photos/underglow-1.webp" alt="Underglow Project" />
                                 <img loading="lazy" src="photos/underglow-2.webp" alt="Underglow Project" />
                                 <img loading="lazy" src="photos/underglow-3.webp" alt="Underglow Project" />
@@ -661,6 +661,14 @@
                                     </svg>
                                     <span>Infotainment</span>
                             </div>
+                            <div class="offer-item">
+                                <img src="photos/detailing.png" alt="Remote Starter" class="offer-image">
+                                <defs>
+                                    <!-- Subtle highlight for realism -->
+                                    <ellipse cx="45" cy="40" rx="15" ry="8" fill="white" opacity="0.15" />
+                                    </svg>
+                                    <span>Detailing</span>
+                            </div>
                         </div>
                         <p>Contact us to learn more about our additional services and custom solutions</p>
                         <a href="#contact" class="cta-button">Inquire Now</a>
@@ -712,8 +720,14 @@
                         <div class="slide-overlay">Star Headliner</div>
                     </div>
                     <div class="slide">
-                        <img src="photos/star-lights-9.webp" alt="Curved Screen Lighting" />
-                        <div class="slide-overlay">Star Headliner</div>
+                        <video class="gallery-video" loop muted playsinline>
+                        <source src="videos/gallery-underglow.webm" type="video/webm">Your browser does not support the video tag.</video>
+                        <div class="slide-overlay">Ambient Lighting Video</div>
+                    </div>
+                    <div class="slide">
+                        <video class="gallery-video" loop muted playsinline>
+                        <source src="videos/gallery-ambient.webm" type="video/webm">Your browser does not support the video tag.</video>
+                        <div class="slide-overlay">Ambient Lighting Video</div>
                     </div>
 
                     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -722,32 +736,35 @@
             </div>
 
             <div class="thumbnail-container">
-                <div class="thumbnail active" onclick="showSlide(0)">
+                <div class="thumbnail active" data-index="0">
                     <img loading="lazy" src="photos/ambient-lighting-4.webp" alt="Starlights Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(1)">
+                <div class="thumbnail active" data-index="1">
                     <img loading="lazy" src="photos/ambient-lighting-3.webp" alt="Ambient Lighting Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(2)">
+                <div class="thumbnail active" data-index="2">
                     <img loading="lazy" src="photos/ambient-lighting-5.webp" alt="Underglow Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(3)">
+                <div class="thumbnail active" data-index="3">
                     <img loading="lazy" src="photos/ambient-lighting-6.webp" alt="Emergency Lighting Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(4)">
+                <div class="thumbnail active" data-index="4">
                     <img loading="lazy" src="photos/ambient-lighting-9.webp" alt="Curved Screen Lighting Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(5)">
+                <div class="thumbnail active" data-index="5">
                     <img loading="lazy" src="photos/star-lights-5.webp" alt="Ambient Lighting Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(6)">
+                <div class="thumbnail active" data-index="6">
                     <img loading="lazy" src="photos/ambient-lighting.webp" alt="Curved Screen Lighting Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(7)">
+                <div class="thumbnail active" data-index="7">
                     <img loading="lazy" src="photos/star-lights-7.webp" alt="Ambient Lighting Thumbnail" />
                 </div>
-                <div class="thumbnail" onclick="showSlide(8)">
-                    <img loading="lazy" src="photos/star-lights-9.webp" alt="Ambient Lighting Thumbnail" />
+                <div class="thumbnail active" data-index="8">
+                    <img loading="lazy" src="photos/underglow-4.webp" alt="Ambient Lighting Thumbnail" />
+                </div>
+                <div class="thumbnail active" data-index="9">
+                    <img loading="lazy" src="photos/ambient-thumbnail.webp" alt="Ambient Lighting Thumbnail" />
                 </div>
             </div>
         </section>
@@ -837,7 +854,7 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="logo" style="justify-content: center; margin-bottom: 1rem">
-                        APEX <span>AUTO</span> CUSTOMS
+                        A&A <span>AUTO</span> MODS
                     </div>
                     <div class="social-links" id="socials">
                         <a href="https://facebook.com/marketplace/profile/100008966918618/?red=permalink&mibextid=dXMIcH" class="social-link">
@@ -850,11 +867,6 @@
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
         </svg>
                         </a>
-                        <a href="https://x.com" class="social-link">
-                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
-        </svg>
-                        </a>
                     </div>
                     <p>&copy; 2025 A&A AutoMods. All rights reserved.</p>
                 </div>
@@ -864,6 +876,8 @@
 
     <div id="consultation-modal" class="modal">
         <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <!-- Add this line for the close button -->
             <h2>Book Your Consultation</h2>
             <form id="consultation-form" action="https://formsubmit.co/Anthony.aalighting@gmail.com" method="POST">
                 <div class="form-group">
@@ -1013,8 +1027,6 @@
             </div>
         </div>
 
-        <!-- Add this CSS to the existing <style> section in the <head> -->
-        <style></style>
 
         <div id="pricing-modal" class="modal">
             <div class="modal-content pricing-modal-content">
@@ -1026,7 +1038,7 @@
                     <div class="service-description">
                         <h3>Star Headliner</h3>
                         <div class="sale-notice">
-                            <span class="sale-badge">20% OFF</span>
+                            <span class="sale-badge">Up to 20% OFF</span>
                             <p>Limited time offer - Sale ends June 30, 2025</p>
                         </div>
                         <p>
@@ -1036,7 +1048,7 @@
                         <div class="pricing-table">
                             <div class="pricing-option">
                                 <h4>Basic Package</h4>
-                                <div class="price">$475+ <span class="original-price">$599</span></div>
+                                <div class="price">$540+ <span class="original-price">$600+</span></div>
                                 <ul>
                                     <li>300 Twinkling Stars</li>
                                     <li>Multi-Color Design</li>
@@ -1050,7 +1062,7 @@
                             <div class="pricing-option featured">
                                 <div class="featured-tag">Most Popular</div>
                                 <h4>Advanced Package</h4>
-                                <div class="price">$645+</div>
+                                <div class="price">$640+ <span class="original-price">$695+</span></div>
                                 <ul>
                                     <li>450 Twinkling Stars</li>
                                     <li>Multi-Color Design</li>
@@ -1063,7 +1075,7 @@
 
                             <div class="pricing-option">
                                 <h4>Premium Package</h4>
-                                <div class="price">$1000+</div>
+                                <div class="price">$1000+ <span class="original-price">$1200+</span></div>
                                 <ul>
                                     <li>800 Twinkling Stars</li>
                                     <li>Multi-Color Design</li>
@@ -1080,6 +1092,10 @@
                 <div class="pricing-content" id="ambient-lighting-pricing">
                     <div class="service-description">
                         <h3>Ambient Lighting</h3>
+                        <div class="sale-notice">
+                            <span class="sale-badge">Up to 20% OFF</span>
+                            <p>Limited time offer - Sale ends June 30, 2025</p>
+                        </div>
                         <p>
                             Create the perfect mood with our custom ambient lighting solutions, featuring RGB LED systems with smartphone control and music synchronization.
                         </p>
@@ -1088,7 +1104,7 @@
                     <div class="pricing-table">
                         <div class="pricing-option">
                             <h4>Basic Package</h4>
-                            <div class="price">$280+</div>
+                            <div class="price">$400+ <span class="original-price">$450+</span></div>
                             <ul>
                                 <li>Dash</li>
                                 <li>Center Console</li>
@@ -1103,11 +1119,12 @@
             <div class="pricing-option featured">
               <div class="featured-tag">Most Popular</div>
               <h4>Advanced Package</h4>
-              <div class="price">$500+</div>
+              <div class="price">$550+ <span class="original-price">$600+</span></div>
               <ul>
                 <li>Dash</li>
                 <li>Door Trims</li>
                 <li>Footwells</li>
+                <li>Center Console</li>
                 <li>Professional Installation</li>
                 <li>1-year warranty</li>
               </ul>
@@ -1121,7 +1138,7 @@
 
             <div class="pricing-option">
               <h4>Premium Package</h4>
-              <div class="price">$700+</div>
+              <div class="price">$920+ <span class="original-price">$960+</span></div>
               <ul>
                 <li>Dash</li>
                 <li>Center Console</li>
@@ -1148,6 +1165,10 @@
 <div class="pricing-content" id="underglow-pricing">
   <div class="service-description">
       <h3>Underglow</h3>
+            <div class="sale-notice">
+                <span class="sale-badge">Up to 20% OFF</span>
+                <p>Limited time offer - Sale ends June 30, 2025</p>
+            </div>
       <p>
           Add a stunning ground effect to your vehicle with our premium
           underglow lighting systems, featuring water-resistant RGB LED
@@ -1159,7 +1180,7 @@
       <!-- Car underglow options -->
       <div class="pricing-option">
           <h4>Basic Package</h4>
-          <div class="price">$160+</div>
+          <div class="price">$160+ <span class="original-price">$200+</span></div>
           <ul>
               <li>Left and right side coverage</li>
               <li>RGB lighting</li>
@@ -1173,7 +1194,7 @@
                         <div class="pricing-option featured">
                             <div class="featured-tag">Most Popular</div>
                             <h4>Advanced Package</h4>
-                            <div class="price">$240+</div>
+                            <div class="price">$250+ <span class="original-price">$300+</span></div>
                             <ul>
                                 <li>All around coverage</li>
                                 <li>Multi-color RGB system</li>
@@ -1187,7 +1208,7 @@
 
                         <div class="pricing-option">
                             <h4>Premium Package</h4>
-                            <div class="price">$400+</div>
+                            <div class="price">$400+ <span class="original-price">$500+</span></div>
                             <ul>
                                 <li>Premium high-output Dream Chaser lights</li>
                                 <li>Smartphone app control</li>
@@ -1204,7 +1225,7 @@
                         <!-- Truck underglow options -->
                         <div class="pricing-option">
                             <h4>Basic Package</h4>
-                            <div class="price">$190+</div>
+                            <div class="price">$200+ <span class="original-price">$250+</span></div>
                             <ul>
                                 <li>Left and right side pods</li>
                                 <li>RGB lighting</li>
@@ -1217,7 +1238,7 @@
 
                         <div class="pricing-option">
                             <h4>Advanced Package</h4>
-                            <div class="price">$300+</div>
+                            <div class="price">$300+ <span class="original-price">$350+</span></div>
                             <ul>
                                 <li>All around pods</li>
                                 <li>Multi-color RGB system</li>
@@ -1231,7 +1252,7 @@
 
                         <div class="pricing-option">
                             <h4>Premium Package</h4>
-                            <div class="price">$650+</div>
+                            <div class="price">$700+ <span class="original-price">$780+</span></div>
                             <ul>
                                 <li>RGBW chasing lights</li>
                                 <li>Grill lights included</li>
