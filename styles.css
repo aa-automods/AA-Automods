@@ -2343,17 +2343,12 @@ header {
 }
 
 .shoutout-logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    border: 3px solid var(--primary);
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .shoutout-logo img {
