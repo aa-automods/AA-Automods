@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     consultationForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const formData = new FormData(consultationForm);
-        fetch("https://formsubmit.co/ajax/anthony.aalighting@gmail.com", { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+        fetch("https://formsubmit.coanthony.aalighting@gmail.com", { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
             consultationForm.style.display = "none";
             formSuccess.classList.remove("hidden");
             consultationForm.reset();
