@@ -2329,6 +2329,30 @@ header {
     left: 0
 }
 
+
+/* styles.css */
+
+.footer-column address {
+    font-style: normal;
+    /* remove default italics */
+    color: #aaa;
+    /* match your footer text color */
+    line-height: 1.6;
+    /* improve readability */
+    margin-bottom: 0.5rem;
+    /* space before the map link */
+}
+
+.footer-column a {
+    color: var(--primary);
+    /* highlight your link */
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
 .slide img,
 .slide video {
     width: 100%;
