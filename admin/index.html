@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <title>Admin | A&A AutoMods</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-brand">
+        <a href="/"><i class="fas fa-car-side"></i> A&A AutoMods</a>
+      </div>
+      <nav class="admin-sidebar-nav">
+        <a href="#" class="admin-nav-item active">
+          <i class="fas fa-tags"></i> Pricing
+        </a>
+        <a href="/" class="admin-nav-item">
+          <i class="fas fa-external-link-alt"></i> View Site
+        </a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <!-- Login -->
+      <div id="loginCard" class="admin-login-card">
+        <h1>Admin Login</h1>
+        <p class="admin-muted">Sign in to update pricing. This page is not linked publicly.</p>
+        <div class="admin-field-grid">
+          <div class="admin-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="username" placeholder="admin@example.com" />
+          </div>
+          <div class="admin-field">
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+          </div>
+        </div>
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-primary" id="loginBtn">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+          <span class="admin-status" id="loginMsg"></span>
+        </div>
+      </div>
+
+      <!-- Editor -->
+      <div id="editorCard" style="display:none;">
+        <div class="admin-header">
+          <div>
+            <h1>Edit Pricing</h1>
+            <p class="admin-header-meta">Logged in as <span id="userEmail"></span></p>
+          </div>
+          <button class="admin-btn admin-btn-ghost" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2><i class="fas fa-star"></i> Star Headliner</h2>
+          </div>
+          <div class="admin-section-body">
+            <div class="admin-field-grid">
+              <div class="admin-field"><label>300 stars</label><input data-bind="prices.starHeadliner.stars300" placeholder="$XXX" /></div>
+              <div class="admin-field"><label>400 stars</label><input data-bind="prices.starHeadliner.stars400" placeholder="$XXX" /></div>
+              <div class="admin-field"><label>600 stars</label><input data-bind="prices.starHeadliner.stars600" placeholder="$XXX" /></div>
+              <div class="admin-field"><label>800 stars</label><input data-bind="prices.starHeadliner.stars800" placeholder="$XXX" /></div>
+              <div class="admin-field"><label>1000 stars</label><input data-bind="prices.starHeadliner.stars1000" placeholder="$XXX" /></div>
+              <div class="admin-field"><label>1200 stars</label><input data-bind="prices.starHeadliner.stars1200" placeholder="$XXX" /></div>
+              <div class="admin-field"><label>+5 shooting stars</label><input data-bind="prices.starHeadliner.shootingStars.five" placeholder="$XX" /></div>
+              <div class="admin-field"><label>+8 shooting stars</label><input data-bind="prices.starHeadliner.shootingStars.eight" placeholder="$XX" /></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2><i class="fas fa-lightbulb"></i> Ambient Lighting</h2>
+          </div>
+          <div class="admin-section-body">
+            <p class="admin-hint">Enter values exactly as displayed (e.g. $440, $520, $650)</p>
+            <div class="admin-subsection">
+              <h3>Basic</h3>
+              <div class="admin-field-grid">
+                <div class="admin-field"><label>Kit only</label><input data-bind="prices.ambientLighting.basic.kitOnly" /></div>
+                <div class="admin-field"><label>With install</label><input data-bind="prices.ambientLighting.basic.withInstall" /></div>
+              </div>
+            </div>
+            <div class="admin-subsection">
+              <h3>Advanced</h3>
+              <div class="admin-field-grid">
+                <div class="admin-field"><label>Kit only</label><input data-bind="prices.ambientLighting.advanced.kitOnly" /></div>
+                <div class="admin-field"><label>With install</label><input data-bind="prices.ambientLighting.advanced.withInstall" /></div>
+              </div>
+            </div>
+            <div class="admin-subsection">
+              <h3>Premium</h3>
+              <div class="admin-field-grid">
+                <div class="admin-field"><label>Kit only</label><input data-bind="prices.ambientLighting.premium.kitOnly" /></div>
+                <div class="admin-field"><label>With install</label><input data-bind="prices.ambientLighting.premium.withInstall" /></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2><i class="fas fa-car-side"></i> Underglow</h2>
+          </div>
+          <div class="admin-section-body">
+            <div class="admin-subsection">
+              <h3>Pods</h3>
+              <div class="admin-field-grid">
+                <div class="admin-field"><label>Type 1</label><input data-bind="prices.underglow.pods.type1" /></div>
+                <div class="admin-field"><label>Type 2</label><input data-bind="prices.underglow.pods.type2" /></div>
+                <div class="admin-field"><label>Type 3</label><input data-bind="prices.underglow.pods.type3" /></div>
+              </div>
+            </div>
+            <div class="admin-subsection">
+              <h3>Strips</h3>
+              <div class="admin-field-grid">
+                <div class="admin-field"><label>RGB Basic (4)</label><input data-bind="prices.underglow.strips.rgbBasic4" /></div>
+                <div class="admin-field"><label>Premium Chasing (6)</label><input data-bind="prices.underglow.strips.premiumChasing6" /></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-primary" id="saveBtn">
+            <i class="fas fa-save"></i> Save Changes
+          </button>
+          <span class="admin-status" id="saveMsg"></span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="admin-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/admin/admin.js"></script>
+</body>
+</html>
