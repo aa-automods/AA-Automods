@@ -327,7 +327,7 @@ p {
     color: rgba(255, 255, 255, 0.88);
     letter-spacing: 0.5px;
     margin-bottom: 1.25rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero-description {
@@ -1023,7 +1023,7 @@ p {
 /* Services Preview */
 .services-preview {
     padding: var(--spacing-xl) 0;
-    background: var(--dark-gray);
+    background: var(--black);
     position: relative;
     z-index: 1;
 }
@@ -1080,7 +1080,6 @@ p {
 
 .section-description-short {
     display: none;
-}
 }
 
 a.link-arrow,
@@ -1409,7 +1408,6 @@ a.link-arrow i {
 
 .small-service-desc-short {
     display: none;
-}
 }
 
 a.small-service-link,
@@ -2395,7 +2393,7 @@ a.small-service-link:focus-visible {
 /* CTA Section */
 .cta-section {
     padding: var(--spacing-xl) 0;
-    background: linear-gradient(135deg, var(--dark-gray), var(--black));
+    background: var(--black);
     position: relative;
     overflow: hidden;
 }
@@ -2440,7 +2438,7 @@ a.small-service-link:focus-visible {
 /* Footer */
 .footer {
     padding: var(--spacing-xl) 0 var(--spacing-md);
-    background: var(--dark-gray);
+    background: var(--black);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
