@@ -190,6 +190,24 @@
                                 <strong>By appointment only — no walk-ins</strong>
                             </p>
                         </div>
+
+                        <div class="contact-card contact-card--paypal">
+                            <div class="contact-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <h3 class="contact-title">Pay Deposit</h3>
+                            <p class="contact-detail">
+                                After we quote you and you agree on the price, pay your deposit here to secure your appointment. We'll confirm once payment is received.
+                            </p>
+                            <div class="paypal-single-btn">
+                                <style>.pp-RRXZU5ESUZ9CA{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                                <form action="https://www.paypal.com/ncp/payment/RRXZU5ESUZ9CA" method="post" target="_blank" class="paypal-deposit-form">
+                                    <input class="pp-RRXZU5ESUZ9CA" type="submit" value="Deposit" />
+                                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" class="paypal-cards-img" />
+                                    <section class="paypal-powered">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" class="paypal-wordmark"/></section>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Contact Form -->
@@ -803,6 +821,34 @@
             gap: 0.5rem;
         }
 
+        .contact-card--paypal {
+            grid-column: span 2;
+        }
+
+        .paypal-single-btn {
+            margin-top: 0.75rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paypal-deposit-form {
+            display: inline-grid !important;
+            justify-items: center;
+            align-content: start;
+            gap: 0.5rem;
+        }
+
+        .paypal-powered {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .paypal-powered .paypal-wordmark {
+            height: 0.875rem;
+            vertical-align: middle;
+            filter: brightness(0) invert(1);
+        }
+
         @media (max-width: 1200px) {
             .contact-grid {
                 gap: var(--spacing-md);
@@ -814,6 +860,10 @@
         }
 
         @media (max-width: 992px) {
+            .contact-card--paypal {
+                grid-column: span 1;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-md);
