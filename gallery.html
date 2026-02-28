@@ -330,6 +330,79 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Page 2 -->
+                    <div class="gallery-item gallery-page-2" data-category="other">
+                        <div class="gallery-image">
+                            <img src="photos/radio-1.avif" alt="Car radio installation">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3 class="gallery-title"></h3>
+                                    <p class="gallery-tag">Radio Installation</p>
+                                </div>
+                                <button class="gallery-expand" aria-label="Expand image">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item gallery-page-2" data-category="other">
+                        <div class="gallery-image">
+                            <img src="photos/radio-2.avif" alt="Car radio installation">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3 class="gallery-title"></h3>
+                                    <p class="gallery-tag">Radio Installation</p>
+                                </div>
+                                <button class="gallery-expand" aria-label="Expand image">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item gallery-page-2" data-category="other">
+                        <div class="gallery-image">
+                            <img src="photos/steering-1.avif" alt="Carbon steering wheel kit">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3 class="gallery-title"></h3>
+                                    <p class="gallery-tag">Carbon Steering Kit</p>
+                                </div>
+                                <button class="gallery-expand" aria-label="Expand image">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item gallery-page-2" data-category="service-lighting">
+                        <div class="gallery-image">
+                            <img src="photos/el-1.avif" alt="Service lighting installation">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3 class="gallery-title"></h3>
+                                    <p class="gallery-tag">Service Lighting</p>
+                                </div>
+                                <button class="gallery-expand" aria-label="Expand image">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item gallery-page-2" data-category="service-lighting">
+                        <div class="gallery-image">
+                            <img src="photos/el-2.avif" alt="Service lighting installation">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3 class="gallery-title"></h3>
+                                    <p class="gallery-tag">Service Lighting</p>
+                                </div>
+                                <button class="gallery-expand" aria-label="Expand image">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Pagination -->
                 <div class="pagination-wrapper">
@@ -453,8 +526,8 @@
 
     <script src="/main.js"></script>
     <script>
-        // Gallery: set to true later to show a second page with demo items
-        const SHOW_DEMO_PAGE = false;
+        // Gallery: second page with additional projects
+        const SHOW_SECOND_PAGE = true;
 
         // Gallery Pagination Configuration
         const ITEMS_PER_PAGE = 15;
@@ -483,18 +556,18 @@
             });
         }
 
-        function getMainPageItems() {
-            return getVisibleItems().filter(item => !item.classList.contains('demo-item'));
+        function getPage1Items() {
+            return getVisibleItems().filter(item => !item.classList.contains('gallery-page-2'));
         }
 
-        function getDemoPageItems() {
-            return getVisibleItems().filter(item => item.classList.contains('demo-item'));
+        function getPage2Items() {
+            return getVisibleItems().filter(item => item.classList.contains('gallery-page-2'));
         }
 
         function getTotalPages() {
-            if (!SHOW_DEMO_PAGE) return 1;
-            const demoItems = getDemoPageItems();
-            return getMainPageItems().length > 0 && demoItems.length > 0 ? 2 : 1;
+            if (!SHOW_SECOND_PAGE) return 1;
+            const page2Items = getPage2Items();
+            return getPage1Items().length > 0 && page2Items.length > 0 ? 2 : 1;
         }
 
         function updatePagination() {
@@ -620,9 +693,13 @@
 
         function displayCurrentPage() {
             const totalPages = getTotalPages();
+            const page1Items = getPage1Items();
+            const page2Items = getPage2Items();
             const pageItems = totalPages === 2 && currentPage === 2
-                ? getDemoPageItems()
-                : getMainPageItems();
+                ? page2Items
+                : totalPages === 2
+                    ? page1Items
+                    : (page1Items.length > 0 ? page1Items : page2Items);
 
             // Hide all items first
             galleryItems.forEach(item => {
@@ -713,7 +790,6 @@
         let visibleImages = [];
 
         function updateVisibleImages() {
-            // Use same list as click handler so index always matches (getVisibleItems = filtered items)
             const visibleItems = getVisibleItems();
             visibleImages = visibleItems.map(item => {
                 const img = item.querySelector('img');
@@ -721,7 +797,6 @@
                 const tagEl = item.querySelector('.gallery-tag');
                 return {
                     img: img ? (img.getAttribute('src') || img.src) : '',
-                    isDemo: item.classList.contains('demo-item'),
                     title: titleEl ? titleEl.textContent : '',
                     tag: tagEl ? tagEl.textContent : ''
                 };
@@ -752,19 +827,9 @@
         function updateLightboxImage() {
             if (visibleImages[currentImageIndex]) {
                 const imageData = visibleImages[currentImageIndex];
-                const demoPlaceholder = document.getElementById('lightbox-demo');
-                
-                if (imageData.isDemo) {
-                    lightboxImg.style.display = 'none';
-                    if (demoPlaceholder) {
-                        demoPlaceholder.style.display = 'flex';
-                    }
-                } else {
-                    lightboxImg.style.display = 'block';
+                lightboxImg.style.display = imageData.img ? 'block' : 'none';
+                if (imageData.img) {
                     lightboxImg.src = imageData.img;
-                    if (demoPlaceholder) {
-                        demoPlaceholder.style.display = 'none';
-                    }
                 }
                 lightboxTitle.textContent = imageData.title;
                 lightboxTag.textContent = imageData.tag;
