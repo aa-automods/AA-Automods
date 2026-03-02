@@ -68,8 +68,15 @@
           <div class="admin-section-body">
             <div class="admin-field-grid">
               <div class="admin-field admin-field-file">
-                <label for="galleryFile">Image file</label>
-                <input id="galleryFile" type="file" accept="image/*" />
+                <label for="galleryFile" class="admin-file-label">Image file</label>
+                <label class="admin-file-picker" for="galleryFile">
+                  <input id="galleryFile" type="file" accept="image/*" aria-describedby="galleryFileHint" />
+                  <span class="admin-file-picker-content">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span class="admin-file-picker-text">Choose image file</span>
+                    <span id="galleryFileHint" class="admin-file-picker-hint">PNG, JPG, WebP up to 5MB</span>
+                  </span>
+                </label>
               </div>
               <div class="admin-field">
                 <label for="galleryCategory">Category</label>

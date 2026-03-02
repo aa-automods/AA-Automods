@@ -71,6 +71,8 @@ CATEGORIES.forEach(({ value, label }) => {
 
 galleryFile.addEventListener("change", () => {
   uploadBtn.disabled = !galleryFile.files?.length;
+  const textEl = document.querySelector(".admin-file-picker-text");
+  if (textEl) textEl.textContent = galleryFile.files?.length ? galleryFile.files[0].name : "Choose image file";
 });
 
 loginBtn.addEventListener("click", async () => {
