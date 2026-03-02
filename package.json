@@ -1,0 +1,10 @@
+{
+  "name": "aa-automods",
+  "private": true,
+  "scripts": {
+    "upload-gallery": "node scripts/upload-gallery-to-firebase.js"
+  },
+  "devDependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}

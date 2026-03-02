@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+  <title>Gallery Admin | A&A AutoMods</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-brand">
+        <a href="/"><i class="fas fa-car-side"></i> A&A AutoMods</a>
+      </div>
+      <nav class="admin-sidebar-nav">
+        <a href="/admin" class="admin-nav-item">
+          <i class="fas fa-tags"></i> Pricing
+        </a>
+        <a href="/admin/gallery" class="admin-nav-item active">
+          <i class="fas fa-images"></i> Gallery
+        </a>
+        <a href="/" class="admin-nav-item">
+          <i class="fas fa-external-link-alt"></i> View Site
+        </a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <div id="loginCard" class="admin-login-card">
+        <h1>Admin Login</h1>
+        <p class="admin-muted">Sign in to manage the gallery.</p>
+        <div class="admin-field-grid">
+          <div class="admin-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="username" placeholder="admin@example.com" />
+          </div>
+          <div class="admin-field">
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+          </div>
+        </div>
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-primary" id="loginBtn">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+          <span class="admin-status" id="loginMsg"></span>
+        </div>
+      </div>
+
+      <div id="galleryCard" style="display:none;">
+        <div class="admin-header">
+          <div>
+            <h1>Gallery Management</h1>
+            <p class="admin-header-meta">Logged in as <span id="userEmail"></span></p>
+          </div>
+          <button class="admin-btn admin-btn-ghost" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+
+        <section class="admin-section admin-section-gallery">
+          <div class="admin-section-header">
+            <h2><i class="fas fa-plus"></i> Add New Image</h2>
+          </div>
+          <div class="admin-section-body">
+            <div class="admin-field-grid">
+              <div class="admin-field admin-field-file">
+                <label for="galleryFile">Image file</label>
+                <input id="galleryFile" type="file" accept="image/*" />
+              </div>
+              <div class="admin-field">
+                <label for="galleryCategory">Category</label>
+                <select id="galleryCategory">
+                  <option value="star-headliner">Star Headliner</option>
+                  <option value="ambient-lighting">Ambient Lighting</option>
+                  <option value="underglow">Underglow</option>
+                  <option value="service-lighting">Service Lighting</option>
+                  <option value="other">Other Services</option>
+                </select>
+              </div>
+              <div class="admin-field">
+                <label for="galleryTag">Display tag</label>
+                <input id="galleryTag" type="text" placeholder="e.g. Star Headliner" />
+              </div>
+              <div class="admin-field">
+                <label for="galleryAlt">Alt text (accessibility)</label>
+                <input id="galleryAlt" type="text" placeholder="Describe the image" />
+              </div>
+            </div>
+            <div class="admin-actions" style="margin-top:1rem;padding-top:0;">
+              <button class="admin-btn admin-btn-primary" id="uploadBtn" disabled>
+                <i class="fas fa-upload"></i> Upload Image
+              </button>
+              <span class="admin-status" id="uploadMsg"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2><i class="fas fa-images"></i> Gallery Images</h2>
+          </div>
+          <div class="admin-section-body">
+            <div id="galleryGrid" class="admin-gallery-grid"></div>
+            <p id="galleryEmpty" class="admin-muted" style="display:none;margin-top:1rem;">No images yet. Upload one above.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="editModal" class="admin-modal" style="display:none;" role="dialog" aria-labelledby="editModalTitle" aria-modal="true">
+    <div class="admin-modal-backdrop"></div>
+    <div class="admin-modal-content">
+      <h2 id="editModalTitle">Edit Image</h2>
+      <div class="admin-field">
+        <label>Category</label>
+        <select id="editCategory"></select>
+      </div>
+      <div class="admin-field">
+        <label>Display tag</label>
+        <input id="editTag" type="text" />
+      </div>
+      <div class="admin-field">
+        <label>Alt text</label>
+        <input id="editAlt" type="text" />
+      </div>
+      <div class="admin-modal-actions">
+        <button class="admin-btn admin-btn-ghost" id="editCancel">Cancel</button>
+        <button class="admin-btn admin-btn-primary" id="editSave">
+          <i class="fas fa-save"></i> Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="admin-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/admin/admin-gallery.js"></script>
+</body>
+</html>

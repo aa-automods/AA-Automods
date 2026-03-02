@@ -544,6 +544,14 @@ p {
     gap: var(--spacing-md);
 }
 
+.gallery-loading,
+.gallery-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+}
+
 .gallery-item {
     position: relative;
     overflow: hidden;
