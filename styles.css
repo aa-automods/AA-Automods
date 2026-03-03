@@ -870,12 +870,24 @@ p {
     align-items: center;
 }
 
-.lightbox-content img {
+/* Wrapper for swipe/slide animation on mobile */
+.lightbox-image-wrap {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.lightbox-image-wrap img {
+    display: block;
     max-width: 100%;
     max-height: 80vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     border-radius: var(--border-radius);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    will-change: transform;
 }
 
 .lightbox-info {
@@ -3052,6 +3064,9 @@ a.small-service-link:focus-visible {
     
     .swipe-hint {
         bottom: 2rem;
+    }
+    .lightbox.active .swipe-hint {
+        display: flex;
     }
     
     .swipe-hint-arrows {
