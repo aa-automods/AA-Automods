@@ -305,3 +305,135 @@ if (document.readyState === 'loading') {
     // DOM is already loaded
     initServiceCarousels();
 }
+
+// ——— Additional Services Detail Modal ———
+const ADDITIONAL_SERVICES_DATA = {
+    'radio': {
+        title: 'Radio — Apple CarPlay',
+        description: 'Upgrade your vehicle with a modern aftermarket touchscreen radio featuring Apple CarPlay, Android Auto, Bluetooth, navigation, and a crisp touch display. With programmed factory features retained such as; steerwheel controls, voice control, HVAC controls, and all other original features your car already has. As well as adding features your car might not have like a back up camera or video streaming via hotspot.',
+        images: ['photos/radio-1.avif', 'photos/radio-2.avif']
+    },
+    'remote-starter': {
+        title: 'Remote Starter',
+        description: 'Start your vehicle from the comfort of your home with our remote starter systems. Warm up your car in winter or cool it down in summer with convenient features like long-range remotes, optional range extenders, smartphone app control, and compatibility with your original key fob. Built-in safety features ensure the engine shuts off if the vehicle is accessed without the key, helping protect against theft while keeping your drive comfortable and secure.',
+        images: ['photos/remote-Starter-1.avif', 'photos/remote-Starter.avif']
+    },
+    'dash-camera': {
+        title: 'Dash Camera',
+        description: 'Protect your vehicle and drive with confidence using our dash camera systems. Record clear video of the road with features like HD recording, wide-angle lenses, night vision, and loop recording so you never miss important moments. Many models also include parking mode, motion detection, GPS tracking, and smartphone connectivity, giving you reliable evidence and added peace of mind whether you\'re driving or parked. Some models can even be paired with our aftermarket radios to directly download and view footage right from your car screen.',
+        images: ['photos/dash-Camera-1.avif', 'photos/dash-Camera.avif']
+    },
+    'vinyl-wrap': {
+        title: 'Vinyl Wrap',
+        description: 'Transform the look of your vehicle with our professional vinyl wrap services. Whether you want a full colour change, chrome delete, or custom accents, vinyl wrap is a stylish and reversible way to personalize your car. We also specialize in niche installs like interior trim wrapping, giving your vehicle a clean, custom finish inside and out. We also offer custom printed decals and livery.',
+        images: ['photos/vinyl-Wrap-1.avif', 'photos/vinyl-Wrap.avif']
+    },
+    'ppf': {
+        title: 'PPF (Paint Protection Film)',
+        description: 'Protect and enhance your vehicle with Paint Protection Film (PPF). Available in clear, satin, and colour-change finishes, PPF helps shield your paint from rock chips, scratches, and road debris while maintaining a flawless look. This durable, self-healing film keeps your vehicle looking newer for longer while adding an extra layer of protection and style.',
+        images: ['photos/ppf.avif']
+    },
+    'carbon-steering': {
+        title: 'Carbon Fiber Parts',
+        description: 'Upgrade your vehicle\'s style and performance with carbon fibre steering wheels and body kits. Designed for a sleek, high-end look, these lightweight upgrades add a sporty feel, improved grip, and aggressive styling to your interior and exterior. From custom steering wheels to aerodynamic body components. Our carbon fibre parts are all custom made to order and allows the customer to provide any type of customization they desire, from completely reshaping your wheel to the pattern and design of the carbon itself.',
+        images: ['photos/carbon-Fibre-Parts.avif', 'photos/carbon-Fibre-Parts-1.avif']
+    },
+};
+
+let serviceDetailCarouselInterval = null;
+
+function buildServiceDetailModalContent(modal, data) {
+    const track = modal.querySelector('.service-detail-carousel__track');
+    const titleEl = modal.querySelector('#service-detail-title');
+    const descEl = modal.querySelector('.service-detail-modal__description');
+
+    track.innerHTML = '';
+
+    data.images.forEach((src, i) => {
+        const slide = document.createElement('div');
+        slide.className = 'service-detail-carousel__slide';
+        slide.setAttribute('aria-hidden', i !== 0);
+        slide.style.backgroundImage = `url('${src}')`;
+        track.appendChild(slide);
+    });
+
+    titleEl.textContent = data.title;
+    descEl.textContent = data.description;
+}
+
+function goToServiceDetailSlide(modal, index) {
+    const slides = modal.querySelectorAll('.service-detail-carousel__slide');
+    if (!slides.length) return;
+    const i = index < 0 ? 0 : index >= slides.length ? slides.length - 1 : index;
+    slides.forEach((s, k) => s.setAttribute('aria-hidden', k !== i));
+}
+
+function startServiceDetailCarousel(modal) {
+    stopServiceDetailCarousel();
+    serviceDetailCarouselInterval = setInterval(() => {
+        const slides = modal.querySelectorAll('.service-detail-carousel__slide');
+        const current = modal.querySelector('.service-detail-carousel__slide[aria-hidden="false"]');
+        if (!slides.length) return;
+        const idx = Array.from(slides).indexOf(current);
+        const next = (idx + 1) % slides.length;
+        goToServiceDetailSlide(modal, next);
+    }, 4500);
+}
+
+function stopServiceDetailCarousel() {
+    if (serviceDetailCarouselInterval) {
+        clearInterval(serviceDetailCarouselInterval);
+        serviceDetailCarouselInterval = null;
+    }
+}
+
+function openServiceDetailModal(serviceId) {
+    const modal = document.getElementById('service-detail-modal');
+    if (!modal) return;
+    const data = ADDITIONAL_SERVICES_DATA[serviceId];
+    if (!data) return;
+    buildServiceDetailModalContent(modal, data);
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    startServiceDetailCarousel(modal);
+    modal.querySelector('.modal-close').focus();
+}
+
+function closeServiceDetailModal() {
+    const modal = document.getElementById('service-detail-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    stopServiceDetailCarousel();
+}
+
+function initServiceDetailModal() {
+    const modal = document.getElementById('service-detail-modal');
+    if (!modal) return;
+
+    document.querySelectorAll('.js-open-service-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = btn.getAttribute('data-service-id');
+            if (id) openServiceDetailModal(id);
+        });
+    });
+
+    modal.querySelectorAll('.modal-close, .modal-overlay').forEach(el => {
+        el.addEventListener('click', () => closeServiceDetailModal());
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeServiceDetailModal();
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServiceDetailModal);
+} else {
+    initServiceDetailModal();
+}

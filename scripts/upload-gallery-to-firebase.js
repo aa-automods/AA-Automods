@@ -35,7 +35,7 @@ const CATEGORY_MAP = {
   underglow: { category: "underglow", tag: "Underglow" },
   el: { category: "service-lighting", tag: "Service Lighting" },
   radio: { category: "other", tag: "Radio Installation" },
-  steering: { category: "other", tag: "Carbon Steering Kit" },
+  steering: { category: "other", tag: "Carbon Fiber Parts" },
   hero: { category: "other", tag: "Hero" },
 };
 

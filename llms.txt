@@ -7,7 +7,7 @@ A&A AutoMods specializes in high-end automotive customizations: fiber optic star
 ## Core Pages
 
 - [Home](https://aa-automods.ca/): Overview of A&A AutoMods services and featured projects
-- [Services](https://aa-automods.ca/services): Star Headliner, Ambient Lighting, Underglow, Service Lighting, Remote Starters, Backup/Dash Cameras, Radio (Apple CarPlay), Vinyl Wrap, PPF, Carbon Steering Kits, Wheels, Body Kits
+- [Services](https://aa-automods.ca/services): Star Headliner, Ambient Lighting, Underglow, Service Lighting, Remote Starters, Dash Cameras, Radio (Apple CarPlay), Vinyl Wrap, PPF, Carbon Fiber Parts, Wheels
 - [Gallery](https://aa-automods.ca/gallery): Portfolio of completed car customization projects
 - [Contact](https://aa-automods.ca/contact): Get a quote - 27 Haas Rd, Unit B, Etobicoke ON M9W 3A1, (647) 677-7287, aa.automods@gmail.com
 
