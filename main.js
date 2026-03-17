@@ -377,7 +377,7 @@ function startServiceDetailCarousel(modal) {
         const idx = Array.from(slides).indexOf(current);
         const next = (idx + 1) % slides.length;
         goToServiceDetailSlide(modal, next);
-    }, 4500);
+    }, 3000);
 }
 
 function stopServiceDetailCarousel() {
