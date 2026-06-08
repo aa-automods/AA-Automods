@@ -1,15 +1,15 @@
 # A&A AutoMods
 
-> Toronto's premier automotive customization shop. Star headliner, ambient LED lighting, underglow, service lighting. 200+ projects in the GTA. Located in Etobicoke, Ontario.
+> Toronto's premier automotive customization shop. Star headliner, ambient LED lighting, underglow, service lighting. 200+ projects in the GTA. Located in Markham, Ontario.
 
 A&A AutoMods specializes in high-end automotive customizations: fiber optic starlight headliners, RGB ambient lighting with smartphone control, premium underglow, and service lighting. We serve Toronto, the Greater Toronto Area (GTA), and Ontario.
 
 ## Core Pages
 
 - [Home](https://aa-automods.ca/): Overview of A&A AutoMods services and featured projects
-- [Services](https://aa-automods.ca/services): Star Headliner, Ambient Lighting, Underglow, Service Lighting, Remote Starters, Dash Cameras, Radio (Apple CarPlay), Vinyl Wrap, PPF, Carbon Fiber Parts, Wheels
+- [Services](https://aa-automods.ca/services): Star Headliner, Ambient Lighting, Underglow, Service Lighting, Remote Starters, Backup/Dash Cameras, Radio (Apple CarPlay), Vinyl Wrap, PPF, Carbon Steering Kits, Wheels, Body Kits
 - [Gallery](https://aa-automods.ca/gallery): Portfolio of completed car customization projects
-- [Contact](https://aa-automods.ca/contact): Get a quote - 27 Haas Rd, Unit B, Etobicoke ON M9W 3A1, (647) 677-7287, aa.automods@gmail.com
+- [Contact](https://aa-automods.ca/contact): Get a quote - 40 Guardsman Rd, Markham ON L3T 6L3, (647) 677-7287, aa.automods@gmail.com
 
 ## Optional
 
