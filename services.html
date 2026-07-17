@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <title>Services | A&A AutoMods - Star Headliner, Ambient Lighting, Underglow | Toronto</title>
     <meta name="description" content="Star headliner, ambient lighting, underglow, service lighting, remote starters & more. Premium auto customization in Toronto & GTA. A&A AutoMods.">
     <meta name="robots" content="index, follow">
@@ -74,13 +75,6 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Backup Camera"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
               "name": "Dash Camera"
             }
           },
@@ -109,14 +103,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Carbon Steering Kits"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Body Kits"
+              "name": "Carbon Fiber Parts"
             }
           }
         ]
@@ -186,12 +173,12 @@
                         <h2 class="section-title">Our Services</h2>
                     </div>
                     <div class="header-right">
-                        <p class="section-description">Precision work. Premium materials. View pricing below.</p>
+                        <p class="section-description">Precision work. Premium materials. Tap a service for photos &amp; details.</p>
                     </div>
                 </div>
                 
-                <div class="services-grid">
-                    <div class="service-card" id="star-headliner">
+                <div class="services-grid services-grid--all">
+                    <button type="button" class="service-card js-open-service-modal" id="star-headliner" data-service-id="star-headliner" aria-label="Learn more about Star Headliner">
                         <div class="service-image-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-slides">
@@ -204,17 +191,12 @@
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Star Headliner</h3>
-                            <p class="service-description">
-                                Breathtaking fiber optic starlight headliner that mimics the night sky.
-                            </p>
-                            <button class="service-link modal-trigger" data-modal="star-headliner-modal">
-                                <span>View Pricing</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <p class="service-description">Breathtaking fiber optic starlight headliner that mimics the night sky.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
-                    
-                    <div class="service-card" id="ambient-lighting">
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="ambient-lighting" data-service-id="ambient-lighting" aria-label="Learn more about Ambient Lighting">
                         <div class="service-image-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-slides">
@@ -227,17 +209,12 @@
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Ambient Lighting</h3>
-                            <p class="service-description">
-                                Custom RGB LED ambient lighting with smartphone control.
-                            </p>
-                            <button class="service-link modal-trigger" data-modal="ambient-lighting-modal">
-                                <span>View Pricing</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <p class="service-description">Custom RGB LED ambient lighting with smartphone control.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
-                    
-                    <div class="service-card" id="underglow">
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="underglow" data-service-id="underglow" aria-label="Learn more about Underglow">
                         <div class="service-image-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-slides">
@@ -250,150 +227,166 @@
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Underglow</h3>
-                            <p class="service-description">
-                                Premium underglow installation with vibrant, customizable LED lighting.
-                            </p>
-                            <button class="service-link modal-trigger" data-modal="underglow-modal">
-                                <span>View Pricing</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <p class="service-description">Premium underglow installation with vibrant, customizable LED lighting.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
-                    
-                    <div class="service-card service-card--no-image" id="service-lighting">
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="service-lighting" data-service-id="service-lighting" aria-label="Learn more about Service Lighting">
                         <div class="service-image-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-slides">
-                                        <div class="carousel-slide active" style="background-image: url('photos/el-2.avif');"></div>
-                                        <div class="carousel-slide" style="background-image: url('photos/el-1.avif');"></div>
+                                    <div class="carousel-slide active" style="background-image: url('photos/el-2.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/el-1.avif');"></div>
                                 </div>
                             </div>
                             <div class="service-overlay"></div>
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Service Lighting</h3>
-                            <p class="service-description">
-                                Professional service lighting installation for maximum visibility.
-                            </p>
-                            <button class="service-link modal-trigger" data-modal="service-lighting-modal">
-                                <span>View Pricing</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <p class="service-description">Professional service lighting installation for maximum visibility.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
-                </div>
+                    </button>
 
-                <div class="additional-services">
-                    <div class="section-label">
-                        <span class="label-line"></span>
-                        <span>ADDITIONAL SERVICES</span>
-                    </div>
-                    <h2 class="section-title">We Also Offer</h2>
-                    <p class="section-description">
-                        <span class="section-description-long">Contact us to learn more about our additional services and custom solutions.</span>
-                        <span class="section-description-short">Contact us for details.</span>
-                    </p>
-                    <div class="small-services-grid">
-                        <div class="small-service-card" id="radio">
-                            <div class="small-service-icon">
-                                <i class="fas fa-broadcast-tower"></i>
+                    <button type="button" class="service-card js-open-service-modal" id="radio" data-service-id="radio" aria-label="Learn more about Radio — Apple CarPlay">
+                        <div class="service-image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slides">
+                                    <div class="carousel-slide active" style="background-image: url('photos/radio-1.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/radio-2.avif');"></div>
+                                </div>
                             </div>
-                            <h4 class="small-service-title">Radio — Apple CarPlay</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Apple CarPlay radio upgrades for seamless smartphone integration.</span>
-                                <span class="small-service-desc-short">Apple CarPlay upgrades.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                            <div class="service-overlay"></div>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-key"></i>
+                        <div class="service-content">
+                            <h3 class="service-title">Radio — Apple CarPlay</h3>
+                            <p class="service-description">Apple CarPlay radio upgrades with factory features retained.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="remote-starter" data-service-id="remote-starter" aria-label="Learn more about Remote Starter">
+                        <div class="service-image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slides">
+                                    <div class="carousel-slide active" style="background-image: url('photos/remote-Starter.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/remote-Starter-1.avif');"></div>
+                                </div>
                             </div>
-                            <h4 class="small-service-title">Remote Starter</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Start your vehicle from a distance with our professional remote starter installation.</span>
-                                <span class="small-service-desc-short">Remote start install.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                            <div class="service-overlay"></div>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-video"></i>
+                        <div class="service-content">
+                            <h3 class="service-title">Remote Starter</h3>
+                            <p class="service-description">Start your vehicle from home—long-range remotes &amp; app control.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="dash-camera" data-service-id="dash-camera" aria-label="Learn more about Dash Camera">
+                        <div class="service-image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slides">
+                                    <div class="carousel-slide active" style="background-image: url('photos/dash-Camera.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/dash-Camera-1.avif');"></div>
+                                </div>
                             </div>
-                            <h4 class="small-service-title">Backup Camera</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Enhance your vehicle's safety with our professional backup camera installation.</span>
-                                <span class="small-service-desc-short">Backup camera install.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                            <div class="service-overlay"></div>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-camera"></i>
+                        <div class="service-content">
+                            <h3 class="service-title">Dash Camera</h3>
+                            <p class="service-description">HD dash cams with night vision, parking mode &amp; GPS.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="vinyl-wrap" data-service-id="vinyl-wrap" aria-label="Learn more about Vinyl Wrap">
+                        <div class="service-image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slides">
+                                    <div class="carousel-slide active" style="background-image: url('photos/vinyl-Wrap.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/vinyl-Wrap-1.avif');"></div>
+                                </div>
                             </div>
-                            <h4 class="small-service-title">Dash Camera</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Protect yourself on the road with our professional dash camera installation.</span>
-                                <span class="small-service-desc-short">Dash cam install.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                            <div class="service-overlay"></div>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-palette"></i>
+                        <div class="service-content">
+                            <h3 class="service-title">Vinyl Wrap</h3>
+                            <p class="service-description">Full colour change, chrome delete, accents &amp; custom liveries.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="ppf" data-service-id="ppf" aria-label="Learn more about PPF">
+                        <div class="service-image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slides">
+                                    <div class="carousel-slide active" style="background-image: url('photos/ppf.avif');"></div>
+                                </div>
                             </div>
-                            <h4 class="small-service-title">Vinyl Wrap</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Full or partial vinyl wrap in a wide range of colors and finishes to transform your vehicle's look.</span>
-                                <span class="small-service-desc-short">Full or partial wrap.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                            <div class="service-overlay"></div>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-shield-halved"></i>
+                        <div class="service-content">
+                            <h3 class="service-title">PPF</h3>
+                            <p class="service-description">Paint protection film—clear, satin, or colour-change finishes.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card js-open-service-modal" id="carbon-steering" data-service-id="carbon-steering" aria-label="Learn more about Carbon Fiber Parts">
+                        <div class="service-image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slides">
+                                    <div class="carousel-slide active" style="background-image: url('photos/carbon-Fibre-Parts.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/carbon-Fibre-Parts-1.avif');"></div>
+                                    <div class="carousel-slide" style="background-image: url('photos/steering-1.avif');"></div>
+                                </div>
                             </div>
-                            <h4 class="small-service-title">PPF</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Paint protection film to guard your paint from chips, scratches, and UV damage.</span>
-                                <span class="small-service-desc-short">Paint protection film.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                            <div class="service-overlay"></div>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-compass"></i>
-                            </div>
-                            <h4 class="small-service-title">Carbon Steering Kits</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Carbon fiber steering wheel upgrades and trim for a premium, sporty interior.</span>
-                                <span class="small-service-desc-short">Carbon steering & trim.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
+                        <div class="service-content">
+                            <h3 class="service-title">Carbon Fiber Parts</h3>
+                            <p class="service-description">Custom carbon steering wheels, trim &amp; body components.</p>
+                            <span class="service-link"><span>Learn more</span><i class="fas fa-arrow-right"></i></span>
                         </div>
-                        
-                        <div class="small-service-card">
-                            <div class="small-service-icon">
-                                <i class="fas fa-car-side"></i>
-                            </div>
-                            <h4 class="small-service-title">Body Kits</h4>
-                            <p class="small-service-description">
-                                <span class="small-service-desc-long">Front lips, side skirts, rear diffusers, and full body kit installation.</span>
-                                <span class="small-service-desc-short">Lips, skirts, diffusers.</span>
-                            </p>
-                            <a href="/contact" class="small-service-link">Contact Us</a>
-                        </div>
-                    </div>
+                    </button>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Service Detail Modal (additional services) -->
+    <div class="modal service-detail-modal" id="service-detail-modal" role="dialog" aria-modal="true" aria-labelledby="service-detail-title" aria-hidden="true">
+        <div class="modal-overlay" tabindex="-1"></div>
+        <div class="modal-content service-detail-modal__content">
+            <button type="button" class="modal-close js-close-service-modal" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="service-detail-modal__inner">
+                <div class="service-detail-modal__carousel-wrap">
+                    <div class="service-detail-carousel">
+                        <div class="service-detail-carousel__track">
+                            <!-- Slides injected by JS -->
+                        </div>
+                    </div>
+                </div>
+                    <div class="service-detail-modal__body">
+                    <h2 id="service-detail-title" class="service-detail-modal__title"></h2>
+                    <p class="service-detail-modal__description"></p>
+                    <div class="service-detail-modal__actions">
+                        <button type="button" class="btn-secondary service-detail-modal__pricing js-service-pricing" hidden>
+                            <span>View Pricing</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <a href="/contact" class="btn-primary service-detail-modal__cta">
+                            <span>Get a Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer (same as index.html) -->
     <footer class="footer">

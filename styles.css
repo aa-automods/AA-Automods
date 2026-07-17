@@ -1136,7 +1136,24 @@ a.link-arrow i {
     gap: var(--spacing-md);
 }
 
-/* Home page featured services: 2×2 on desktop */
+/* All services: consistent 3-column photo grid on desktop */
+.services-grid--all {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .services-grid--all {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid--all {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Home page featured services: 2×2 on desktop (legacy) */
 .services-grid--featured {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -1201,10 +1218,23 @@ a.link-arrow i {
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-base);
     height: 100%;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+button.service-card:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
 }
 
 .service-card:hover {
@@ -1718,6 +1748,25 @@ button.small-service-link:hover i {
     margin-top: 0.25rem;
 }
 
+.service-detail-modal__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.service-detail-modal__pricing {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.service-detail-modal__pricing[hidden] {
+    display: none !important;
+}
+
 .service-detail-modal .modal-close {
     top: 0.75rem;
     right: 0.75rem;
@@ -1761,6 +1810,16 @@ button.small-service-link:hover i {
     }
 
     .service-detail-modal__cta {
+        width: auto;
+    }
+
+    .service-detail-modal__actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .service-detail-modal__pricing {
         width: auto;
     }
 }
@@ -3096,6 +3155,8 @@ button.small-service-link:hover i {
     }
     
     .services-grid,
+    .services-grid--all,
+    .services-grid--featured,
     .projects-grid,
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -3103,7 +3164,7 @@ button.small-service-link:hover i {
     }
     
     .service-card {
-        min-height: auto;
+        min-height: 240px;
     }
     
     .service-content {

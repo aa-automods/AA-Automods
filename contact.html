@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <title>Contact | A&A AutoMods - Get a Quote | Markham, Toronto</title>
     <meta name="description" content="Contact A&A AutoMods in Markham. Get a quote for car customization. 40 Guardsman Rd. Call (647) 677-7287. Toronto star headliner & LED experts.">
     <meta name="robots" content="index, follow">
@@ -189,21 +190,20 @@
                             </p>
                         </div>
 
-                        <div class="contact-card paypal-deposit-card">
+                        <div class="contact-card contact-card--paypal">
                             <div class="contact-icon">
-                                <i class="fas fa-credit-card"></i>
+                                <i class="fab fa-paypal"></i>
                             </div>
                             <h3 class="contact-title">Pay Deposit</h3>
                             <p class="contact-detail">
-                                Secure deposit via PayPal.<br>
-                                Cards and other payment methods accepted.
+                                After we quote you and you agree on the price, pay your deposit here to secure your appointment. We'll confirm once payment is received.
                             </p>
-                            <div class="paypal-deposit-wrap">
-                                <style>.pp-FL8F5FVMG25JY{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                                <form action="https://www.paypal.com/ncp/payment/FL8F5FVMG25JY" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                                    <input class="pp-FL8F5FVMG25JY" type="submit" value="Deposit" />
-                                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Cards and payment methods" />
-                                    <section style="font-size: 0.75rem;"> Powered by <img class="paypal-wordmark-white" src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" style="height:0.875rem;vertical-align:middle;"/></section>
+                            <div class="paypal-single-btn">
+                                <style>.pp-RRXZU5ESUZ9CA{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                                <form action="https://www.paypal.com/ncp/payment/RRXZU5ESUZ9CA" method="post" target="_blank" class="paypal-deposit-form">
+                                    <input class="pp-RRXZU5ESUZ9CA" type="submit" value="Deposit" />
+                                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" class="paypal-cards-img" />
+                                    <section class="paypal-powered">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" class="paypal-wordmark"/></section>
                                 </form>
                             </div>
                         </div>
@@ -254,7 +254,6 @@
                                     <label class="service-opt"><input type="checkbox" name="service" value="Underglow"> Underglow</label>
                                     <label class="service-opt"><input type="checkbox" name="service" value="Service Lighting"> Service Lighting</label>
                                     <label class="service-opt"><input type="checkbox" name="service" value="Remote Starter"> Remote Starter</label>
-                                    <label class="service-opt"><input type="checkbox" name="service" value="Backup Camera"> Backup Camera</label>
                                     <label class="service-opt"><input type="checkbox" name="service" value="Dash Camera"> Dash Camera</label>
                                     <label class="service-opt"><input type="checkbox" name="service" value="Radio - Apple CarPlay"> Radio — Apple CarPlay</label>
                                     <label class="service-opt"><input type="checkbox" name="service" value="General Consultation"> Consultation</label>
@@ -421,51 +420,6 @@
         main {
             overflow-x: hidden;
             max-width: 100%;
-        }
-
-        /* CTA section: align actions in a row with wrap */
-        .cta-actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 1rem;
-        }
-        /* PayPal wordmark: white on dark background */
-        .paypal-wordmark-white {
-            filter: brightness(0) invert(1);
-            vertical-align: middle;
-        }
-        .paypal-deposit-wrap {
-            display: inline-flex;
-            align-items: center;
-        }
-        .paypal-deposit-wrap img[alt="Cards and payment methods"] {
-            max-height: 1.5rem;
-        }
-        .paypal-deposit-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .paypal-deposit-card .contact-icon,
-        .paypal-deposit-card .contact-title,
-        .paypal-deposit-card .contact-detail {
-            align-self: center;
-        }
-        .paypal-deposit-card .paypal-deposit-wrap {
-            margin-top: 0.5rem;
-            justify-content: center;
-        }
-        .paypal-deposit-card .paypal-deposit-wrap form {
-            display: inline-grid !important;
-            justify-items: center !important;
-        }
-        /* Desktop: PayPal card spans full width so no single slot left */
-        @media (min-width: 769px) {
-            .paypal-deposit-card {
-                grid-column: 1 / -1;
-            }
         }
 
         /* Contact Page Specific Styles */
@@ -810,7 +764,7 @@
 
         .map-section {
             padding: var(--spacing-xl) 0;
-            background: var(--dark-gray);
+            background: var(--black);
             position: relative;
             z-index: 1;
         }
@@ -868,6 +822,34 @@
             gap: 0.5rem;
         }
 
+        .contact-card--paypal {
+            grid-column: span 2;
+        }
+
+        .paypal-single-btn {
+            margin-top: 0.75rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paypal-deposit-form {
+            display: inline-grid !important;
+            justify-items: center;
+            align-content: start;
+            gap: 0.5rem;
+        }
+
+        .paypal-powered {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .paypal-powered .paypal-wordmark {
+            height: 0.875rem;
+            vertical-align: middle;
+            filter: brightness(0) invert(1);
+        }
+
         @media (max-width: 1200px) {
             .contact-grid {
                 gap: var(--spacing-md);
@@ -879,6 +861,10 @@
         }
 
         @media (max-width: 992px) {
+            .contact-card--paypal {
+                grid-column: span 1;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-md);
