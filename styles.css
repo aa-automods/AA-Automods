@@ -2974,6 +2974,16 @@ button.small-service-link:hover i {
     font-size: 0.875rem;
 }
 
+.footer-credit a {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-credit a:hover {
+    color: var(--text-secondary);
+}
+
 .footer-bottom-links {
     display: flex;
     gap: var(--spacing-lg);
