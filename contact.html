@@ -85,7 +85,6 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAavcJ8pVMRW2s3Xx0vocCtFS_M3luP7H890qWcBUEJLRZHAVsWkphrYRNZAg4zrmVGHORphnRVaod&components=hosted-buttons&disable-funding=venmo&currency=CAD"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -225,12 +224,12 @@
                                 After we quote you and you agree on the price, pay your deposit here to secure your appointment. We'll confirm once payment is received.
                             </p>
                             <div class="paypal-single-btn">
-                                <div id="paypal-container-RTW87EY46TCKC"></div>
-                                <script>
-                                    paypal.HostedButtons({
-                                        hostedButtonId: "RTW87EY46TCKC",
-                                    }).render("#paypal-container-RTW87EY46TCKC");
-                                </script>
+                                <style>.pp-RTW87EY46TCKC{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                                <form action="https://www.paypal.com/ncp/payment/RTW87EY46TCKC" method="post" target="_blank" class="paypal-deposit-form">
+                                    <input class="pp-RTW87EY46TCKC" type="submit" value="Deposit" />
+                                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" class="paypal-cards-img" />
+                                    <section class="paypal-powered">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" class="paypal-wordmark"/></section>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -858,9 +857,22 @@
             justify-content: center;
         }
 
-        .paypal-single-btn #paypal-container-RTW87EY46TCKC {
-            width: 100%;
-            max-width: 20rem;
+        .paypal-deposit-form {
+            display: inline-grid !important;
+            justify-items: center;
+            align-content: start;
+            gap: 0.5rem;
+        }
+
+        .paypal-powered {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .paypal-powered .paypal-wordmark {
+            height: 0.875rem;
+            vertical-align: middle;
+            filter: brightness(0) invert(1);
         }
 
         @media (max-width: 1200px) {
