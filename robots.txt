@@ -30,4 +30,14 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# AI / LLM discovery files
+# https://aa-automods.ca/llms.txt
+# https://aa-automods.ca/llms-full.txt
+
 Sitemap: https://aa-automods.ca/sitemap.xml

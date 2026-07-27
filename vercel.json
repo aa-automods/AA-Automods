@@ -10,6 +10,7 @@
     {"source": "/terms", "destination": "/terms.html"},
     {"source": "/robots.txt", "destination": "/robots.txt"},
     {"source": "/sitemap.xml", "destination": "/sitemap.xml"},
-    {"source": "/llms.txt", "destination": "/llms.txt"}
+    {"source": "/llms.txt", "destination": "/llms.txt"},
+    {"source": "/llms-full.txt", "destination": "/llms-full.txt"}
   ]
 }

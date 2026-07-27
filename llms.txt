@@ -1,17 +1,42 @@
 # A&A AutoMods
 
-> Toronto's premier automotive customization shop. Star headliner, ambient LED lighting, underglow, service lighting. 200+ projects in the GTA. Located in Markham, Ontario.
+> Automotive customization shop in Markham, Ontario (Toronto GTA). Star headliner, ambient LED lighting, underglow, Apple CarPlay, remote starters, dash cameras, vinyl wrap, PPF, and carbon fiber parts. By appointment only.
 
-A&A AutoMods specializes in high-end automotive customizations: fiber optic starlight headliners, RGB ambient lighting with smartphone control, premium underglow, and service lighting. We serve Toronto, the Greater Toronto Area (GTA), and Ontario.
+A&A AutoMods specializes in high-end vehicle lighting and interior upgrades. Shop address: 40 Guardsman Rd, Markham, ON L3T 6L3. Phone: (647) 677-7287. Email: aa.automods@gmail.com. Hours: Monday–Sunday 11:00–19:00. Free quotes; reply typically within 48 hours. Deposit after quote approval secures the appointment.
 
 ## Core Pages
 
-- [Home](https://aa-automods.ca/): Overview of A&A AutoMods services and featured projects
-- [Services](https://aa-automods.ca/services): Star Headliner, Ambient Lighting, Underglow, Service Lighting, Remote Starters, Backup/Dash Cameras, Radio (Apple CarPlay), Vinyl Wrap, PPF, Carbon Steering Kits, Wheels, Body Kits
-- [Gallery](https://aa-automods.ca/gallery): Portfolio of completed car customization projects
-- [Contact](https://aa-automods.ca/contact): Get a quote - 40 Guardsman Rd, Markham ON L3T 6L3, (647) 677-7287, aa.automods@gmail.com
+- [Home](https://aa-automods.ca/): Overview, featured projects, FAQ
+- [Services](https://aa-automods.ca/services): Full service list with photos and pricing for lighting packages
+- [Gallery](https://aa-automods.ca/gallery): Portfolio of completed installs
+- [Contact](https://aa-automods.ca/contact): Free quote form, phone, map, PayPal deposit
+
+## Services
+
+- Star Headliner — fiber optic starlight headliner, custom colors and patterns
+- Ambient Lighting — RGB LED with smartphone control
+- Underglow — exterior LED underglow
+- Service Lighting — high-visibility service vehicle lighting
+- Radio — Apple CarPlay — aftermarket radio with CarPlay / Android Auto
+- Remote Starter — long-range remotes and app control
+- Dash Camera — HD recording, night vision, parking mode
+- Vinyl Wrap — colour change, chrome delete, accents, liveries
+- PPF — paint protection film (clear, satin, colour-change)
+- Carbon Fiber Parts — steering wheels, trim, body components
+
+## Service Area
+
+Markham, Toronto, Vaughan, Richmond Hill, Scarborough, Mississauga, and the Greater Toronto Area (GTA). Work is done by appointment at the Markham shop — no walk-ins.
+
+## Booking
+
+1. Request a free quote via contact form, phone, or email
+2. Agree on scope and price
+3. Pay deposit online to lock the appointment
+4. Install at 40 Guardsman Rd, Markham
 
 ## Optional
 
 - [Privacy Policy](https://aa-automods.ca/privacy)
 - [Terms of Service](https://aa-automods.ca/terms)
+- [Full AI context](https://aa-automods.ca/llms-full.txt)
