@@ -2810,6 +2810,122 @@ button.small-service-link:hover i {
     border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+/* Local SEO content */
+.seo-local-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--black);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.seo-local-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.seo-local-copy .section-title {
+    margin-bottom: 1rem;
+}
+
+.seo-local-copy p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 40rem;
+}
+
+.seo-local-copy a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.seo-local-copy a:hover {
+    text-decoration: underline;
+}
+
+.seo-local-points {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 0.65rem;
+}
+
+.seo-local-points li {
+    color: var(--text-primary);
+    font-size: 0.9875rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.seo-local-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--accent-primary);
+}
+
+.seo-local-card {
+    background: var(--medium-gray);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+.seo-local-card-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.125rem;
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+}
+
+.seo-local-dl {
+    margin: 0 0 1.25rem;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.seo-local-dl div {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.seo-local-dl dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+}
+
+.seo-local-dl dd {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.9875rem;
+    line-height: 1.45;
+}
+
+.seo-local-dl a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.seo-local-cta {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .seo-local-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .faq-list {
     display: flex;
     flex-direction: column;

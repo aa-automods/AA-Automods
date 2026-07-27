@@ -1,0 +1,9 @@
+# Humans & AI discovery — A&A AutoMods
+
+Site: https://aa-automods.ca
+Contact: aa.automods@gmail.com · (647) 677-7287
+LLM summary: /llms.txt
+Full LLM context: /llms-full.txt
+Sitemap: /sitemap.xml
+
+A&A AutoMods is a Markham, Ontario automotive customization shop (star headliner, ambient lighting, underglow, Apple CarPlay, and more) serving the Toronto GTA. Appointment only.

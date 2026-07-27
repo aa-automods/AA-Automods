@@ -1,0 +1,13 @@
+/* TEAM */
+Contact: aa.automods@gmail.com
+Phone: +1-647-677-7287
+Instagram: https://www.instagram.com/aa.automods/
+
+/* SITE */
+Standards: HTML5, CSS3
+Language: en-CA
+Location: Markham, Ontario, Canada
+
+/* AI */
+LLM-Context: https://aa-automods.ca/llms.txt
+LLM-Context-Full: https://aa-automods.ca/llms-full.txt

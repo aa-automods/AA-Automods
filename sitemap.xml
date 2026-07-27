@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://aa-automods.ca/</loc>
     <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aa-automods.ca/photos/hero_Section_Img.JPG</image:loc>
+      <image:title>A&A AutoMods Markham shop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aa-automods.ca/photos/starlight-1.avif</image:loc>
+      <image:title>Star headliner install Markham</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://aa-automods.ca/services</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://aa-automods.ca/gallery</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://aa-automods.ca/photos/starlight-3.avif</image:loc>
+      <image:title>Starlight headliner gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aa-automods.ca/photos/ambient-1.avif</image:loc>
+      <image:title>Ambient lighting gallery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://aa-automods.ca/contact</loc>
@@ -27,25 +44,37 @@
   <url>
     <loc>https://aa-automods.ca/llms.txt</loc>
     <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aa-automods.ca/llms-full.txt</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://aa-automods.ca/ai.txt</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://aa-automods.ca/privacy</loc>
+    <loc>https://aa-automods.ca/humans.txt</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://aa-automods.ca/privacy</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.15</priority>
+  </url>
+  <url>
     <loc>https://aa-automods.ca/terms</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.15</priority>
   </url>
 </urlset>

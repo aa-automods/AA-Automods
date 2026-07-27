@@ -11,6 +11,29 @@
     {"source": "/robots.txt", "destination": "/robots.txt"},
     {"source": "/sitemap.xml", "destination": "/sitemap.xml"},
     {"source": "/llms.txt", "destination": "/llms.txt"},
-    {"source": "/llms-full.txt", "destination": "/llms-full.txt"}
+    {"source": "/llms-full.txt", "destination": "/llms-full.txt"},
+    {"source": "/ai.txt", "destination": "/ai.txt"},
+    {"source": "/humans.txt", "destination": "/humans.txt"}
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/ai.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    }
   ]
 }
